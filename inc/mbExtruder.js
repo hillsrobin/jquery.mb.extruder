@@ -97,7 +97,6 @@ if (!jQuery.browser) {
 		if(isNaN(this.options.width)){
 			if(this.options.width.indexOf('%') != -1){
 				this.options.width = jQuery(window).width() * (parseFloat(this.options.width) / 100);
-				console.log(this.options.width);
 			}
 		}
 				
