@@ -93,6 +93,14 @@ if (!jQuery.browser) {
 
         var isVertical = this.options.position=="left" || this.options.position=="right";
 
+		/* Handle % width */
+		if(isNaN(this.options.width)){
+			if(this.options.width.indexOf('%') != -1){
+				this.options.width = jQuery(window).width() * (parseFloat(this.options.width) / 100);
+				console.log(this.options.width);
+			}
+		}
+				
         var extW= isVertical?1: this.options.width;
 
         var c= $("<div/>").addClass("extruder-content").css({overflow:"hidden", width:extW});
